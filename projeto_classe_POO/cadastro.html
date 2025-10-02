@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario de usuario</h1>
+    <form action="salvar.php" method="post">
+        <div>
+            <label>Tipo:</label>
+            <select name="tipo" required>
+                <option value="">Selecione</option>
+                <option value="professor">Professor</option>
+                <option value="aluno">Aluno</option>
+            </select>
+        </div>
+        <br><br>
+        <div>
+            <label>Nome:</label>
+            <input type="text" name="nome" required>
+        </div>
+        <br><br>
+        <div>
+            <label>Email:</label>
+            <input type="email" name="email" required>
+        </div>
+        <br><br>
+        <div>
+            <label>Disciplina (para professores):</label>
+            <input type="text" name="disciplina" required>
+        </div>
+        <br><br>
+        <div>
+            <label>Matricula (para alunos):</label>
+            <input type="text" name="matricula" required>
+        </div>
+        <br><br>
+        <div>
+            <button type="submit">Salvar</button>
+        </div>
+    </form>
+
+    <script>
+        const tipoSelect = document.getElementById('tipo');
+        const disciplinaDiv = document.getElementById('disciplina-div');
+        const matriculaDiv = document.getElementById('matricula-div');
+        const disciplinaInput = document.getElementById('disciplina');
+        const matriculaInput = document.getElementById('matricula');
+
+        tipoSelect.addEventListener('change', function() {
+            const selectedValue = this.value;
+
+            // Esconde todos os campos específicos
+            disciplinaDiv.style.display = 'none';
+            matriculaDiv.style.display = 'none';
+            
+            // Remove required dos campos
+            disciplinaInput.removeAttribute('required');
+            matriculaInput.removeAttribute('required');
+
+            // Mostra o campo apropriado baseado na seleção
+            if (selectedValue === 'professor') {
+                disciplinaDiv.style.display = 'block';
+                disciplinaInput.setAttribute('required', 'required');
+            } else if (selectedValue === 'aluno') {
+                matriculaDiv.style.display = 'block';
+                matriculaInput.setAttribute('required', 'required');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+    "professor": [
+        {
+            "nome": "Leonardo",
+            "email": "claudie9141@uorak.com",
+            "disciplina": null
+        },
+        {
+            "nome": "Leonardo",
+            "email": "claudie9141@uorak.com",
+            "disciplina": null
+        },
+        {
+            "nome": "Leonardo",
+            "email": "claudie9141@uorak.com",
+            "disciplina": "matematcica"
+        },
+        {
+            "nome": "Leonardo",
+            "email": "claudie9141@uorak.com",
+            "disciplina": "matematcica"
+        }
+    ],
+    "aluno": [
+        {
+            "nome": "Leonardo",
+            "email": "claudie9141@uorak.com",
+            "matricula": "5"
+        }
+    ]
+}
